@@ -1,43 +1,71 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 3%;
+  padding: 1%;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 table {
   border-collapse: collapse;
+  margin-top: 24px;
 }
-
 td,
 th {
   padding: 8px;
 }
-
 tr:nth-child(even) {
   background-color: #dddddd;
 }
 td:first-child {
-  min-width: 30px;
+  min-width: 40px;
 }
-
+thead {
+  border-bottom: 1px solid #f3f3f3;
+}
 .category-button {
   background-color: black;
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 8px;
   color: white;
   margin: 4px;
   word-break: break-word;
 }
-
+.category-button.e-commerce {
+  background-color: #a7d479;
+  border: 1px solid #a7d479;
+}
+.category-button.surveys-and-forms {
+  background-color: #fdd28e;
+  border: 1px solid #fdd28e;
+}
+.category-button.digital-marketing {
+  background-color: #ecc5f4;
+  border: 1px solid #ecc5f4;
+}
+.category-button.platform-news-and-updates {
+  background-color: #ff928f;
+  border: 1px solid #ff928f;
+}
+.category-button.tips-and-best-practices {
+  background-color: #a2e0df;
+  border: 1px solid #a2e0df;
+}
+.category-button.landing-pages {
+  background-color: #532058;
+  border: 1px solid #532058;
+}
+.category-button.data-management {
+  background-color: #a8408b;
+  border: 1px solid #a8408b;
+}
+.category-button.marketing-analytics {
+  background-color: #0b8ba4;
+  border: 1px solid #0b8ba4;
+}
+.category-button.marketing-automation {
+  background-color: #f9bff2;
+  border: 1px solid #f9bff2;
+}
+.category-button.email-marketing {
+  background-color: #fdd28e;
+  border: 1px solid #fdd28e;
+}
 .loader {
   position: absolute;
   left: 50%;
@@ -51,7 +79,6 @@ td:first-child {
   border-top: 16px solid #3498db;
   animation: spin 2s linear infinite;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -60,10 +87,24 @@ td:first-child {
     transform: rotate(360deg);
   }
 }
-
-.main-content {
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
-
-li.active {
-  background-color: yellow;
+.pagination li {
+  color: black;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 8px;
+}
+.pagination li.active {
+  background-color: #3498db;
+  color: white;
+}
+.pagination li.hidden {
+  display: none;
+}
+.pagination li.cursor-btn {
+  cursor: pointer;
 }

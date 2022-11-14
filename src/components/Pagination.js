@@ -41,6 +41,11 @@ function Pagination(props) {
       </li>
     );
   });
+
+  function dynamicColor(categoryName) {
+    let splitted = categoryName.replace(/\s+/g, '-').toLowerCase();
+    return splitted;
+  }
   return (
     <div>
       <div>
@@ -65,7 +70,12 @@ function Pagination(props) {
 
                   <td>
                     {user.categories.map((category, index) => (
-                      <button key={index} className="category-button ">
+                      <button
+                        key={index}
+                        className={
+                          'category-button ' + dynamicColor(category.name)
+                        }
+                      >
                         {category.name}
                       </button>
                     ))}
@@ -84,22 +94,23 @@ function Pagination(props) {
           })}
         </ol> */}
       </div>
-      <ul>
-        <li>
-          {pages[0]}
-          <button onClick={handlePrevClick} disabled={currentPage === pages[0]}>
-            Prev
-          </button>
+      <ul className="pagination">
+        <li
+          onClick={handlePrevClick}
+          className={'cursor-btn ' + (currentPage == 1 ? 'hidden' : '')}
+        >
+          ❮
         </li>
+
         {pageNumbers}
-        <li>
-          {pages.length}
-          <button
-            onClick={handleNextClick}
-            disabled={currentPage === pages[pages.length - 1]}
-          >
-            NExt
-          </button>
+        <li
+          onClick={handleNextClick}
+          className={
+            'cursor-btn ' +
+            (currentPage === pages[pages.length - 1] ? 'hidden' : '')
+          }
+        >
+          ❯
         </li>
       </ul>
     </div>
