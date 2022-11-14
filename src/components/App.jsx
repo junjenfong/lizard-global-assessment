@@ -1,5 +1,10 @@
+import Table from './Table';
 function App() {
-  return <div>{/* Complete the exercise here. */}</div>;
+  return (
+    <div>
+      <Table></Table>
+    </div>
+  );
 }
 
 export default App;
