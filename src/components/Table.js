@@ -63,18 +63,24 @@ function Table() {
 
   function handleFilter() {
     let filterMatchedData = [];
-
-    if (data) {
+    console.log(filter);
+    if (!filter) {
+      console.log('ntg');
+      data.forEach((post) => {
+        filterMatchedData.push(post);
+      });
+      setTotalPage2(filterMatchedData.length);
+    }
+    if (data && filter) {
       data.forEach((post) => {
         post.categories.filter((p) => {
-          if (p.name.includes(filter)) {
+          if (p.name.match(filter)) {
             filterMatchedData.push(post);
           }
         });
       });
       setCurrentPage(1);
       setTotalPage2(filterMatchedData.length);
-      console.log(totalPage2);
     }
 
     //spotted some duplicating data on certain filter, apply removing duplicate value before pushing to state value
@@ -96,7 +102,7 @@ function Table() {
     setCurrentPage(currentPage + 1);
   }
   function applyFilter(e) {
-    setFilter(e.target.value);
+    setFilter(e.target.value === 'DEFAULT' ? '' : e.target.value);
   }
 
   return (
@@ -104,9 +110,7 @@ function Table() {
       <h1>Info List</h1>
       <label>Filter By Categories: </label>
       <select onChange={applyFilter} defaultValue={'DEFAULT'}>
-        <option disabled value="DEFAULT">
-          -- select an option --
-        </option>
+        <option value="DEFAULT">-- select an option --</option>
 
         {availableCategories.map((c, i) => (
           <option key={i}>{c}</option>
