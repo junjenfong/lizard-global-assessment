@@ -1,8 +1,8 @@
-import Table from './Table';
+import InfoList from './InfoList';
 function App() {
   return (
     <div>
-      <Table></Table>
+      <InfoList></InfoList>
     </div>
   );
 }

@@ -1,0 +1,18 @@
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.pagination li {
+  color: black;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 8px;
+}
+.pagination li.active {
+  background-color: #3498db;
+  color: white;
+}
+.pagination li.cursor-btn {
+  cursor: pointer;
+}

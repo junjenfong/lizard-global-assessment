@@ -1,0 +1,32 @@
+@grey-color: #f3f3f3;
+@background-grey: #dddddd;
+@standard-padding: 8px;
+
+table {
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+td,
+th {
+  padding: @standard-padding;
+}
+
+tr:nth-child(even) {
+  background-color: @background-grey;
+}
+
+td:first-child {
+  min-width: 40px;
+}
+thead {
+  border-bottom: 1px solid @grey-color;
+}
+
+@media only screen and (max-width: 480px) {
+  /*desktop*/
+  .table-wrapper {
+    overflow-x: scroll;
+    font-size: 12px;
+  }
+}

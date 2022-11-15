@@ -10,6 +10,9 @@ import './mock';
 
 // Include styles.
 import './styles/index.css';
+import './styles/Components/loader.css';
+import './styles/Components/pagination.css';
+import './styles/Components/table.css';
 
 // Include application component.
 import App from './components/App';

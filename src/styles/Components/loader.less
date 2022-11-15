@@ -1,0 +1,25 @@
+@grey-color: #f3f3f3;
+@primary-color: #3498db;
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid @grey-color;
+  border-radius: 50%;
+  border-top: 16px solid @primary-color;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

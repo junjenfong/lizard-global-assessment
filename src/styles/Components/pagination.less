@@ -1,0 +1,23 @@
+@standard-padding: 8px;
+@standard-border-radius: 8px;
+@primary-color: #3498db;
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  li {
+    color: black;
+    padding: @standard-padding;
+    margin: 4px;
+    border-radius: @standard-border-radius;
+    &.active {
+      background-color: @primary-color;
+      color: white;
+    }
+
+    &.cursor-btn {
+      cursor: pointer;
+    }
+  }
+}
