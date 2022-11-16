@@ -6,7 +6,7 @@
   margin: 4px;
   word-break: break-word;
 }
-.category-button.e-commerce {
+.category-button.ecommerce {
   background-color: #a7d479;
   border: 1px solid #a7d479;
 }
@@ -22,7 +22,7 @@
   background-color: #ff928f;
   border: 1px solid #ff928f;
 }
-.category-button.tips-and-best-practices {
+.category-button.tips-and-best-practise {
   background-color: #a2e0df;
   border: 1px solid #a2e0df;
 }
@@ -45,4 +45,9 @@
 .category-button.email-marketing {
   background-color: #fdd28e;
   border: 1px solid #fdd28e;
+}
+@media only screen and (max-width: 480px) {
+  .category-button .table-wrapper {
+    font-size: 12px;
+  }
 }

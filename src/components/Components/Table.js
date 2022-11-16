@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 function Table(props) {
   let pageData = props.pageData || [];
   let currentPage = props.currentPage;
@@ -35,15 +36,15 @@ function Table(props) {
     );
   });
 
-  const tableRows = pageData.map((user, index) => {
+  const tableRows = pageData.map((info, index) => {
     return (
       <tr key={index}>
         <td>{offset * (currentPage - 1) + index + 1}</td>
-        <td>{user.title}</td>
-        <td>{user.summary}</td>
+        <td>{info.title}</td>
+        <td>{info.summary}</td>
 
         <td>
-          {user.categories.map((category, index) => (
+          {info.categories.map((category, index) => (
             <button
               key={index}
               className={
@@ -55,8 +56,11 @@ function Table(props) {
           ))}
         </td>
 
-        <td>{user.publishDate}</td>
-        <td>{user.author.name}</td>
+        <td>{info.publishDate}</td>
+        <td>{info.author.name}</td>
+        <td>
+          <Link to={`/details/${info.id}`}>View details</Link>
+        </td>
       </tr>
     );
   });
@@ -78,6 +82,7 @@ function Table(props) {
               <th>Categories</th>
               <th>Publish Date</th>
               <th>Author</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>{tableRows}</tbody>
